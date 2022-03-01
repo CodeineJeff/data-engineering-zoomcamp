@@ -1,14 +1,14 @@
 locals {
-  data_lake_bucket = "dtc_data_lake"
+  data_lake_bucket = "taxi_data_lake"
 }
 
 variable "project" {
-  description = "Your GCP Project ID"
+  description = "lunar-byte-340415"
 }
 
 variable "region" {
   description = "Region for GCP resources. Choose as per your location: https://cloud.google.com/about/locations"
-  default = "europe-west6"
+  default = "us-west3"
   type = string
 }
 
@@ -21,4 +21,10 @@ variable "BQ_DATASET" {
   description = "BigQuery Dataset that raw data (from GCS) will be written to"
   type = string
   default = "trips_data_all"
+}
+
+variable "TABLE_NAME" {
+  description = "BigQuery Table"
+  type = string
+  default = "ny_trips"
 }
